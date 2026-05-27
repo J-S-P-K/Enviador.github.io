@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<title>Mis Capacidades (según yo)</title>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-dark bg-dark">
+<div class="container">
+<span class="navbar-brand mb-0 h1">Pesoa Juan Santiago</span>
+</div>
+</nav>
+
+<!-- PRESENTACIÓN -->
+<div class="container mt-5">
+
+<div class="text-center mb-5">
+<h1>Lo que Recuerdo</h1>
+<p class="text-muted">
+Resumen de conocimientos adquiridos durante el ciclo lectivo 2025 en desarrollo web, programación y manejo de datos.
+</p>
+</div>
+
+<!-- TARJETAS -->
+<div class="row g-4">
+  
+<!-- TARJETA 1 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Desarrollo Web</h5>
+<p class="card-text">
+Conocimiento en la creación de páginas web utilizando 
+<strong>HTML, CSS y JavaScript</strong>.  
+Capacidad para crear páginas web y crear interfaces funcionales, 
+aunque me cuesta la parte del diseño bonito (Esta interfaz fué asistida por la I.A.).
+</p>
+</div>
+</div>
+</div>
+
+<!-- TARJETA 2 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Interacciones Web</h5>
+<p class="card-text">
+Implementación de interacciones básicas en páginas web mediante 
+<strong>JavaScript</strong> y conocimiento inicial de 
+<strong>PHP</strong> para conectarse con bases de datos.
+</p>
+</div>
+</div>
+</div>
+
+<!-- TARJETA 3 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Google Apps Script</h5>
+<p class="card-text">
+Uso de <strong>Google Apps Script</strong> para crear pequeños servicios web
+que permiten conectar páginas web y componentes con herramientas de Google como 
+<strong>Google Sheets</strong> para almacenamiento de datos. (Solo usé google sheets con App Script)
+</p>
+</div>
+</div>
+</div>
+
+<!-- TARJETA 4 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Comunicación Web</h5>
+<p class="card-text">
+Capacidad para <strong>enviar y recibir datos entre páginas web y servicios externos</strong>
+utilizando solicitudes HTTP desde JavaScript.
+</p>
+</div>
+</div>
+</div>
+
+<!-- TARJETA 5 -->
+<div class="col-md-6 col-lg-4">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Bases de Datos</h5>
+<p class="card-text">
+Conocimiento general de bases de datos relacionales utilizando 
+<strong>MySQL</strong>, incluyendo comprensión de tablas, registros y 
+consultas. (Me gusta hacer consultas)
+</p>
+</div>
+</div>
+</div>
+  
+</div>
+
+<br><br><br>
+
+<div class="col-md-6 col-lg-12">
+<div class="card h-100 shadow-sm">
+<div class="card-body">
+<h5 class="card-title">Pequeña prueba de comunicación "entre páginas"</h5>
+<p class="card-text">
+Si escribís una palabra o frase acá y la enviás podrás verla en 
+<a target="_blank" href="https://maieco6maseco7finalizado3.on.drv.tw/Receptor/"> otro sitio web</a> 
+completamente separado
+</p>
+    <input class="form-control" id="palabra">
+    <br>
+    <button class="btn btn-primary" onclick="enviar()">Enviar</button>
+    <br>
+</div>
+</div>
+</div>
+
+
+
+</div>
+    <script>
+        const url = "https://script.google.com/macros/s/AKfycby4anwF0SIxXjxys3nIzsEPbSP85wz8Mx0KHP4milzXF-QMe23XyAfzywytRsiwZumwaQ/exec";
+        function enviar(){
+            let palabra = document.getElementById("palabra").value;
+
+            fetch(url,{
+                method:"POST",
+                body: new URLSearchParams({
+                    palabra: palabra
+                })
+            })
+            
+            .then(r=>r.text())
+            .then(d=>alert("Palabra enviada"));
+        }
+    </script>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+</body>
+</html>
